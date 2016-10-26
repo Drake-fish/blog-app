@@ -6,8 +6,9 @@ import blogRender from './views/blogRender';
 import Post from './views/blogCreator';
 import userSettings from './views/userSettings';
 import viewBlogRender from './views/viewBlogRender';
-
+import Session from './Collections/profiles';
 let posts= new blogPosts();
+let profiles = new Session();
 const main= $('main');
 const singlePost=$('.single-post');
 
@@ -29,8 +30,9 @@ const routerSettings={
     main.append(Post(posts));
   },
   userInfo: () =>{
+    singlePost.empty();
     main.empty();
-    userInfo();
+    main.append(userSettings(profiles));
   },
   viewBlogRender: () =>{
     singlePost.empty();
