@@ -4,12 +4,7 @@ function blogRender(posts){
   posts.fetch({
 	success: function(posts) {
 		console.log('fetch success', posts);
-    const fullPostContainer=`</div>
-    <div class="view-post">
-    </div>
-    `;
-    $('main').append(fullPostContainer);
-    const postList=$('<ul></ul>');
+    const postList=$('<ul class="post-nav"></ul>');
     posts.forEach(function(post,i, arr){
       console.log(post);
       let singlePost=`

@@ -37,6 +37,7 @@ const routerSettings={
   viewBlogRender: () =>{
     singlePost.empty();
     singlePost.append(viewBlogRender(posts));
+    main.append(singlePost);
 
   }
 };
